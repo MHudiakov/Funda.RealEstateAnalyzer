@@ -2,13 +2,13 @@
 
 namespace Infrastructure.Clients.PropertyApi.Models;
 
-internal class PropertyDto
+public class PropertyDto
 {
-    internal string Id { get; set; }
+    public string Id { get; set; }
 
     [JsonPropertyName("MakelaarId")]
-    internal int BrokerId { get; set; }
+    public int BrokerId { get; set; }
 
     [JsonPropertyName("MakelaarNaam")]
-    internal string BrokerName { get; set; }
+    public string BrokerName { get; set; }
 }

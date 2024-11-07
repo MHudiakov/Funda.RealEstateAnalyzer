@@ -2,10 +2,10 @@
 
 namespace Infrastructure.Clients.PropertyApi.Models;
 
-internal class GetPropertiesForSaleResponse
+public class GetPropertiesForSaleResponse
 {
     [JsonPropertyName("Objects")]
-    internal IEnumerable<PropertyDto> Properties { get; set; }
+    public IEnumerable<PropertyDto> Properties { get; set; }
 
-    internal Paging Paging { get; set; }
+    public Paging Paging { get; set; }
 }

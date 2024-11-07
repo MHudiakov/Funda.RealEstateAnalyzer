@@ -2,8 +2,8 @@
 
 namespace Infrastructure.Clients.PropertyApi.Models;
 
-internal class Paging
+public class Paging
 {
     [JsonPropertyName("AantalPaginas")]
-    internal int TotalPages { get; init; }
+    public int TotalPages { get; init; }
 }
