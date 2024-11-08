@@ -5,7 +5,7 @@ namespace Infrastructure.Clients.PropertyApi.Models;
 public class GetPropertiesForSaleResponse
 {
     [JsonPropertyName("Objects")]
-    public IEnumerable<PropertyDto> Properties { get; set; }
+    public required IEnumerable<PropertyDto> Properties { get; set; }
 
-    public Paging Paging { get; set; }
+    public required Paging Paging { get; set; }
 }

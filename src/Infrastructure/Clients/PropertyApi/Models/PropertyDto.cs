@@ -4,11 +4,11 @@ namespace Infrastructure.Clients.PropertyApi.Models;
 
 public class PropertyDto
 {
-    public string Id { get; set; }
+    public required string Id { get; set; }
 
     [JsonPropertyName("MakelaarId")]
     public int BrokerId { get; set; }
 
     [JsonPropertyName("MakelaarNaam")]
-    public string BrokerName { get; set; }
+    public required string BrokerName { get; set; }
 }

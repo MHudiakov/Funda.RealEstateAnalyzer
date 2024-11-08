@@ -1,17 +1,13 @@
 ﻿using Application.Brokers.Queries.GetTopBrokersByListings;
-using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers;
 
-public class BrokersController(IPropertyApiClient propertyApiClient) : ApiControllerBase
+public class BrokersController : ApiControllerBase
 {
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Property>>> GetTopBrokersByListings([FromQuery] GetTopBrokersByListingsQuery query)
+    public async Task<ActionResult<IEnumerable<BrokerDto>>> GetTopBrokersByListings([FromQuery] GetTopBrokersByListingsQuery query)
     {
-        IEnumerable<Property> t = await propertyApiClient.GetPropertiesForSaleAsync(new PropertyFilter("Amsterdam", false),
-            CancellationToken.None);
-
-        return Ok(t);
+        return await Mediator.Send(query);
     }
 }

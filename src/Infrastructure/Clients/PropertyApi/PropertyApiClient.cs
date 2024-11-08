@@ -2,6 +2,7 @@
 using AutoMapper;
 using System.Text.Json;
 using Infrastructure.Clients.PropertyApi.Models;
+using Infrastructure.Common.Exceptions;
 using Microsoft.Extensions.Caching.Memory;
 using Property = Domain.Entities.Property;
 
@@ -70,6 +71,7 @@ public sealed class PropertyApiClient(HttpClient httpClient, IMapper mapper, IMe
         }
 
         url += $"&pagesize={PageSize}&page={page}";
+        
         return url;
     }
 

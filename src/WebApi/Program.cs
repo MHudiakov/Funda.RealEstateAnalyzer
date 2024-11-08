@@ -1,3 +1,4 @@
+using Application;
 using Infrastructure;
 using Serilog;
 
@@ -9,7 +10,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services
-    //.AddApplication()
+    .AddApplication()
     .AddInfrastructure(builder.Configuration)
     .AddHealthChecks();
 
